@@ -35,7 +35,7 @@ function Button({onClick, children}:ButtonProps){
     let ref = React.useRef() as React.RefObject<Element>;
     let {buttonProps, isPressed} = useButton({onPress: onClick}, ref)
     return(
-        <FocusRing focusClass="ring">
+        <FocusRing focusRingClass="ring ring-offset-2 ring-offset-black">
             <button {...buttonProps} className={`${isPressed ? "bg-blue-400/30" : "bg-blue-400"} px-4 py-2 rounded-md touch-none select-none focus:outline-none text-2xl`}>
                 {children}
             </button>
