@@ -35,7 +35,7 @@ function Button({onClick, children}:ButtonProps){
     let ref = React.useRef() as React.RefObject<Element>;
     let {buttonProps, isPressed} = useButton({onPress: onClick}, ref)
     return(
-        <button {...buttonProps} className={`${isPressed ? "bg-blue-400/30" : "bg-blue-400"} px-3 py-1 rounded-md`}>
+        <button {...buttonProps} className={`${isPressed ? "bg-blue-400/30" : "bg-blue-400"} px-3 py-1 rounded-md touch-none select-none`}>
             {children}
         </button>
     )
