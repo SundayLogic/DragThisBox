@@ -1,16 +1,16 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
+import Test from '../components/pages/Test'
 
 const Home: NextPage = () => {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center py-2">
+    <div className="bg-black h-[100vh] flex">
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <h1>Drag this box</h1>
+        <Test />
       </main>
     </div>
   )
