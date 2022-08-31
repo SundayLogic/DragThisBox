@@ -2,7 +2,7 @@ import { MotionConfig } from "framer-motion";
 import Slidder from "../organisms/Slidder";
 import { motion } from "framer-motion";
 import React, { useRef, useState } from "react";
-import { useButton } from "react-aria";
+import { useButton, FocusRing } from "react-aria";
 const Test = () => {
   const [open, setOpen] = useState(false);
   return (
@@ -35,9 +35,11 @@ function Button({onClick, children}:ButtonProps){
     let ref = React.useRef() as React.RefObject<Element>;
     let {buttonProps, isPressed} = useButton({onPress: onClick}, ref)
     return(
-        <button {...buttonProps} className={`${isPressed ? "bg-blue-400/30" : "bg-blue-400"} px-3 py-1 rounded-md touch-none select-none`}>
-            {children}
-        </button>
+        <FocusRing focusClass="">
+            <button {...buttonProps} className={`${isPressed ? "bg-blue-400/30" : "bg-blue-400"} px-3 py-1 rounded-md touch-none select-none focus:outline-none`}>
+                {children}
+            </button>
+        </FocusRing>
     )
 }
 
