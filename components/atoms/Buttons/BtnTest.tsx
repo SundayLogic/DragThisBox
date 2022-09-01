@@ -7,7 +7,7 @@ interface ButtonProps{
   children: string | number;
 }
 function Button({ onClick, children }: ButtonProps) {
-  let ref = React.useRef() as React;
+  let ref = React.useRef() as React.RefObject<Element>;
   let {buttonProps} = useButton( {onPress: onClick}, ref)
   return (
     <button
