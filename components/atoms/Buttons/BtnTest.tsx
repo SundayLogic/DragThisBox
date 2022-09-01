@@ -1,4 +1,5 @@
 import React,{ useRef} from "react";
+import {motion, useAnimation} from "framer-motion"
 import {  FocusRing, useButton, } from "react-aria";
 import useAppStore from "../../Store";
 
@@ -9,14 +10,16 @@ interface ButtonProps{
 function Button({ onClick, children }: ButtonProps) {
   let ref = React.useRef() as React.RefObject<Element>;
   let {buttonProps} = useButton( {onPress: onClick}, ref)
+  let controls = useAnimation({})
   return (
     <FocusRing focusRingClass="ring ring-offset-2 ring-offset-black">
-      <button
+      <motion.button
+        animate={controls}
         {...buttonProps}
         className="bg-blue-500/60 tracking-wide px-8 py-4 text-2xl rounded-lg select-none touch-none focus:outline-none"
       >
         <h2 className="font-bold">{children}</h2>
-      </button>
+      </motion.button>
     </FocusRing>
   );
 }
