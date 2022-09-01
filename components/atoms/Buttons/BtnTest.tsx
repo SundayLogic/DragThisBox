@@ -1,24 +1,43 @@
-import React,{ useRef} from "react";
-import {motion, useAnimation} from "framer-motion"
-import {  FocusRing, useButton, } from "react-aria";
+import React, { useRef, useState } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { FocusRing, useButton } from "react-aria";
 import useAppStore from "../../Store";
 
-interface ButtonProps{
+interface ButtonProps {
   onClick: () => any;
   children: string | number;
 }
 function Button({ onClick, children }: ButtonProps) {
+  const [isPressed, setIsPressed] = useState(false);
+  let controls = useAnimation();
   let ref = React.useRef() as React.RefObject<Element>;
-  let {buttonProps} = useButton( {onPress: onClick}, ref)
-  let controls = useAnimation({})
+  let { buttonProps } = useButton(
+    {
+      onPressStart: () => {
+        controls.stop();
+        controls.set({background: "rgb(96 165 250 / 0.6)"})
+      },
+      onPress: () => {
+        onClick();
+        controls.start({
+          background: ["rgb(96 165 250 / 0.6)", "rgb(59 130 246 / 0.6)"],
+        });
+      },
+    },
+    ref
+  );
   return (
     <FocusRing focusRingClass="ring ring-offset-2 ring-offset-black">
       <motion.button
-        animate={controls}
         {...buttonProps}
         className="bg-blue-500/60 tracking-wide px-8 py-4 text-2xl rounded-lg select-none touch-none focus:outline-none"
+        animate={controls}
       >
-        <h2 className="font-bold">{children}</h2>
+        <motion.h2
+          className="font-bold"
+        >
+          {children}
+        </motion.h2>
       </motion.button>
     </FocusRing>
   );
