@@ -10,7 +10,7 @@ interface ButtonProps {
 function Button({ onClick, children }: ButtonProps) {
   return (
     <button
-      className="bg-purple-600/50 p-4 text-2xl rouded-md select-none"
+      className="bg-blue-500/60 tracking-wide p-4 text-2xl rounded-lg select-none"
       onClick={() => onClick()}
     >
       {children}
