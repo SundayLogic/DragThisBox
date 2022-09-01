@@ -10,14 +10,13 @@ function Button({ onClick, children }: ButtonProps) {
   let ref = React.useRef() as React.RefObject<Element>;
   let {buttonProps} = useButton( {onPress: onClick}, ref)
   return (
-    <FocusRing focusRingClass="ring">
+    <FocusRing focusRingClass="ring ring-offset-2 ring-offset-black">
       <button
         {...buttonProps}
-        className="bg-blue-500/60 tracking-wide px-8 py-4 text-2xl rounded-lg select-none touch-none"
+        className="bg-blue-500/60 tracking-wide px-8 py-4 text-2xl rounded-lg select-none touch-none focus:outline-none"
       >
         <h2 className="font-bold">{children}</h2>
       </button>
-
     </FocusRing>
   );
 }
