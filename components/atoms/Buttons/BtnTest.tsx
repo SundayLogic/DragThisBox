@@ -8,15 +8,16 @@ interface ButtonProps {
 }
 
 function Button({ onClick, children }: ButtonProps) {
-    return <button onClick={() => onClick()}>{children}</button>
+    return <button className="bg-purple-600/50 p-4 text-2xl rouded-md" onClick={() => onClick()}>{children}</button>
 }
 
 const BtnTest = () => {
   const [result, setResult] = useState<number>(0);
   return (
-    <div className="bg-slate-400 p-5 mb-20">
-        <h1>{result}</h1>
-        <Button onClick={() => setResult(result+1)} children={"Increase"}/>
+    <div className="p-5 mb-20 text-white flex flex-col space-y-5">
+        <h1 className="text-center text-6xl">{result}</h1>
+        <Button 
+        onClick={() => setResult(result+1)} children={"Increase"}/>
     </div>
 
   );
