@@ -7,8 +7,8 @@ interface ButtonProps{
   children: string | number;
 }
 function Button({ onClick, children }: ButtonProps) {
-  let ref = useRef();
-  let {buttonProps} = useButton( {newClick}, ref)
+  let ref = React.useRef() as React;
+  let {buttonProps} = useButton( {onPress: onClick}, ref)
   return (
     <button
       {...buttonProps}
