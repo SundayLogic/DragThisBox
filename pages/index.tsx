@@ -8,6 +8,7 @@ const Home: NextPage = () => {
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
+        <link rel="manifest" href="/site.webmanifest" />
       </Head>
       <main>
         <Test />
