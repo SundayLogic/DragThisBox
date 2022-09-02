@@ -8,7 +8,7 @@ const Slidder = () => {
   return (
 
     <motion.div
-      className="bg-orange-300/20 flex-1 w-[100vw] flex items-center justify-center overflow-hidden rounded-lg"
+      className="bg-orange-300/5 flex-1 w-[100vw] flex items-center justify-center overflow-hidden rounded-lg"
       initial={{
         x: 365,
         y: -10

@@ -13,13 +13,14 @@ const BtnTest = () => {
     <div className="p-5 mb-20 text-flex text-white/90 flex-col space-y-5">
       <motion.h1 
       animate={{
+        y:isSlidder ? [0,10] : 0,
         opacity: isSlidder ? [100,0] : [0,100] 
       }}
       transition={{
         duration: 0.15,
         ease: "easeInOut"
       }}
-      className="text-center text-8xl tabular-nums font-extralight"
+      className="text-center text-8xl tabular-nums font-extralight text-white/80"
       >{count}</motion.h1>
       <div className="flex space-x-4">
         <div className="text-orange-600/90 flex-wrap flex ">
