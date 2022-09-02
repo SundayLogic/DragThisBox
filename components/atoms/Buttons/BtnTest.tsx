@@ -10,8 +10,8 @@ const BtnTest = () => {
     <div className="p-5 mb-20 text-white flex flex-col space-y-5">
       <h1 className="text-center text-6xl tabular-nums">{count}</h1>
       <div className="flex space-x-4">
-        <Button children={"-"} />
-        <Button children={"+"} />
+        <Button onClick={dec} children={"-"} />
+        <Button onClick={inc} children={"+"} />
       </div>
     </div>
   );
@@ -20,9 +20,10 @@ const BtnTest = () => {
 export default BtnTest;
 
 interface ButtonProps {
+  onClick: () => void
   children: string | number;
 }
-function Button({ children }: ButtonProps) {
+function Button({ onClick, children }: ButtonProps) {
   const darkColor = "rgb(59 130 246 / 0.6)";
   const lightColor = "rgb(147 197 253 / 0.6)";
   let controls = useAnimation();
@@ -41,6 +42,7 @@ function Button({ children }: ButtonProps) {
           transition: { duration: 0.39 },
         });
       },
+      onPress: onClick,
     },
     ref
   );
