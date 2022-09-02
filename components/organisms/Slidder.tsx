@@ -15,9 +15,10 @@ const Slidder = () => {
       }}
       animate={{
         x: isActive ? 0 : 365,
+        y: isActive ? [-10,100] : -10
       }}
       transition={{ 
-        duration: 0.25,
+        duration: 0.3,
         ease: "easeInOut"
     }}
     >
