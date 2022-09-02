@@ -48,13 +48,16 @@ function Button({ onClick, children }: ButtonProps) {
   );
   return (
     <FocusRing focusRingClass="ring ring-offset-2 ring-offset-black">
-      <button {...buttonProps}>
+      <button
+        {...buttonProps}
+        className="select-none touch-none focus:outline-none"
+      >
         <motion.button
+          className="bg-blue-500/60 tracking-wide px-8 py-4 cursor-pointer text-2xl rounded-lg select-none touch-none focus:outline-none"
           animate={controls}
           style={{
             WebkitTapHighlightColor: "transparent",
           }}
-          className="bg-blue-500/60 tracking-wide px-8 py-4 cursor-pointer text-2xl rounded-lg select-none touch-none focus:outline-none"
         >
           <h2 className="font-bold">{children}</h2>
         </motion.button>
