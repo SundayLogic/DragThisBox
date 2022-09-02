@@ -9,9 +9,9 @@ const BtnTest = () => {
   const del = useAppStore((state) => state.del);
   return (
     <div className="p-5 mb-20 text-flex text-white flex-col space-y-5">
-      <h1 className="text-center text-6xl tabular-nums font-extralight">{count}</h1>
+      <h1 className="text-center text-8xl tabular-nums font-extralight">{count}</h1>
       <div className="flex space-x-4">
-        <div className="text-orange-600">
+        <div className="text-orange-600/90">
           <Button onClick={del} children={"C"} buttonBg="bg-orange-600/70"/>
         </div>
         <Button onClick={dec} children={"-"} buttonBg="bg-slate-600/90"/>
@@ -65,7 +65,7 @@ function Button({ onClick, children, buttonBg }: ButtonProps) {
         {...buttonProps}
       >
         <motion.button
-          className=" bg-slate-600/90 tracking-wide px-7  py-4  cursor-pointer text-3xl rounded-full select-none touch-none focus:outline-none "
+          className=" bg-slate-600/90 tracking-wide px-7  py-5  cursor-pointer text-3xl rounded-full select-none touch-none focus:outline-none "
           animate={controls}
           style={{
             WebkitTapHighlightColor: "transparent",
