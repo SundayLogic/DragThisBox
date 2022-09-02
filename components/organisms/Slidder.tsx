@@ -16,7 +16,7 @@ const Slidder = () => {
         x: isActive ? 0 : 365,
       }}
       transition={{ 
-        duration: 0.3,
+        duration: 0.25,
         ease: "easeInOut"
     }}
     >
