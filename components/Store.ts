@@ -6,6 +6,8 @@ const appStore = (set:any) => ({
     inc: () => set((state:any) =>  ({count: state.count + 1})),
     dec: () => set((state:any) =>  ({count: state.count - 1})),
     del: () => set((state:any) =>  ({count: 0})),
+    isActive: false,
+    changeIsActive: () => set((state:any) => ({isActive: !state.isActive})),
 })
 const useAppStore =  create(
     devtools(

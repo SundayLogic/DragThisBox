@@ -1,20 +1,27 @@
-import {motion} from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
+import { useState } from "react";
+import useAppStore from "../Store";
 const Slidder = () => {
-    return(
-        <motion.div className="bg-blue-300 h-[20rem] w-[100vw] flex justify-center items-center text-3xl"
-            drag="y"
-            initial={{
-                opacity: 0.3,
-                y: 200,
-            }}
-            whileDrag={{
-                opacity: 1,
-                style: {borderRadius: 20}
-            }}
-            dragConstraints={{top: 0, bottom:10}}
-        >
-            <h1>Text</h1>    
-        </motion.div>
-    );
+  let isActive = useAppStore((state) => state.isActive);
+  let setIsActive = useAppStore((state) => state.changeIsActive);
+  return (
+
+    <motion.div
+      className="bg-orange-300/20 flex-1 w-[100vw] flex items-center justify-center overflow-hidden rounded-lg"
+      initial={{
+        x: 365,
+        y: -10
+      }}
+      animate={{
+        x: isActive ? 0 : 365,
+      }}
+      transition={{ 
+        duration: 0.3,
+        ease: "easeInOut"
+    }}
+    >
+      <h1 className="text-white text-2xl">Slidder</h1>
+    </motion.div>
+  );
 };
 export default Slidder;

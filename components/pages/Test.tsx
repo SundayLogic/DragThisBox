@@ -1,11 +1,12 @@
 import BtnTest from "../atoms/Buttons/BtnTest";
-import create from "zustand";
+import Slidder from "../organisms/Slidder";
 const Test = () => {
   return (
-    <div className="h-[100vh] w-[100vw] flex items-end justify-center">
+    <div className="h-[100vh] w-[100vw] flex flex-col  items-center overflow-hidden">
+      <Slidder />
       <BtnTest />
     </div>
-  );
+  ); 
 };
 export default Test;
 
