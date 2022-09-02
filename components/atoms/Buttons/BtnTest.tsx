@@ -8,9 +8,19 @@ const BtnTest = () => {
   const dec = useAppStore((state) => state.dec);
   const del = useAppStore((state) => state.del);
   const changeSlidder = useAppStore((state) => state.changeIsActive);
+  const isSlidder = useAppStore((state) => state.isActive);
   return (
-    <div className="p-5 mb-20 text-flex text-white flex-col space-y-5">
-      <h1 className="text-center text-8xl tabular-nums font-extralight">{count}</h1>
+    <div className="p-5 mb-20 text-flex text-white/90 flex-col space-y-5">
+      <motion.h1 
+      animate={{
+        opacity: isSlidder ? [100,0] : [0,100] 
+      }}
+      transition={{
+        duration: 0.15,
+        ease: "easeInOut"
+      }}
+      className="text-center text-8xl tabular-nums font-extralight"
+      >{count}</motion.h1>
       <div className="flex space-x-4">
         <div className="text-orange-600/90 flex-wrap flex ">
           <Button onClick={del} children={"C"} buttonBg="bg-orange-600/70"/>

@@ -2,6 +2,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useState } from "react";
 import useAppStore from "../Store";
 const Slidder = () => {
+  const count = useAppStore((state) => state.count);
   let isActive = useAppStore((state) => state.isActive);
   let setIsActive = useAppStore((state) => state.changeIsActive);
   return (
@@ -20,7 +21,7 @@ const Slidder = () => {
         ease: "easeInOut"
     }}
     >
-      <h1 className="text-white text-2xl">Slidder</h1>
+      <h1 className="text-white text-9xl">{count}</h1>
     </motion.div>
   );
 };
