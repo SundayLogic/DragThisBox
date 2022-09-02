@@ -20,7 +20,7 @@ const BtnTest = () => {
 export default BtnTest;
 
 interface ButtonProps {
-  onClick: () => void
+  onClick: () => void;
   children: string | number;
 }
 function Button({ onClick, children }: ButtonProps) {
@@ -48,17 +48,17 @@ function Button({ onClick, children }: ButtonProps) {
   );
   return (
     <FocusRing focusRingClass="ring ring-offset-2 ring-offset-black">
-      <motion.button
-        animate={controls}
-        style={{
-          WebkitTapHighlightColor: "transparent",
-        }}
-        className="bg-blue-500/60 tracking-wide px-8 py-4 cursor-pointer text-2xl rounded-lg select-none touch-none focus:outline-none"
-      >
-        <span {...buttonProps}>
+      <button {...buttonProps}>
+        <motion.button
+          animate={controls}
+          style={{
+            WebkitTapHighlightColor: "transparent",
+          }}
+          className="bg-blue-500/60 tracking-wide px-8 py-4 cursor-pointer text-2xl rounded-lg select-none touch-none focus:outline-none"
+        >
           <h2 className="font-bold">{children}</h2>
-        </span>
-      </motion.button>
+        </motion.button>
+      </button>
     </FocusRing>
   );
 }
