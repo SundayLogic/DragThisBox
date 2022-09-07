@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React,{ useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { FocusRing, useButton } from "react-aria";
 import useAppStore from "../../Store";
