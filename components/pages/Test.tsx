@@ -40,9 +40,9 @@ const Test = () => {
     <div className="h-[100vh] w-[100vw] flex flex-col  items-center overflow-hidden">
       <Slidder />
       <BtnTest />
-      <div className="flex space-x-2">
+      <div className="flex space-x-2 items-center justify-center">
         <button
-          className="bg-red-300 px-3 py-1 rounded-md"
+          className="bg-red-300 px-3 py-1 rounded-md "
           onClick={() => deleteUser()}
         >
           Delete
@@ -51,13 +51,19 @@ const Test = () => {
           className="bg-orange-300 px-3 py-1 rounded-md"
           onClick={() => updateData(count)}
         >
-         Update 
+         Update: # 
+        </button>
+        <button
+          className="bg-orange-300 px-3 py-1 rounded-md"
+          onClick={() => updateUser("Pablo")}
+        >
+         Update: U 
         </button>
         <button
           className="bg-green-300 px-3 py-1 rounded-md"
-          onClick={() => updateUser("Jhon")}
+          onClick={() => createUser("Pablo", count)}
         >
-          Save
+         Create 
         </button>
       </div>
     </div>
