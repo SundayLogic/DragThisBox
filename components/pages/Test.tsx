@@ -21,7 +21,7 @@ const Test = () => {
     });
   };
   const deleteUser = () => {
-    const docToDelete = doc(db, "users", "O4NUvD5nHZZH2UxAsFrG", "name");
+    const docToDelete = doc(db, "users", "O4NUvD5nHZZH2UxAsFrG");
     return deleteDoc(docToDelete);
   };
   const updateUser = (newName: string) => {
